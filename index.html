@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharshankumar KB</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8629d7faca.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header">
+                <h1>Hello, I am <span class="name"> Tharshankumar</span> </h1>
+            </div>
+        </div>
+    </div>
+    <div class="content-right-icone">
+        <a href="#header"><button class="pageup" onclick="topFunction()" id="pageup" title="Go to top"><i class="fa-solid fa-angles-up fa-bounce"></i></button></a>
+    </div>
+<!------------------------about------------------------>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/About.gif" draggable="false" loading="lazy">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>As a Data Analytics enthusiast with expertise in Python, SQL, and Tableau. My objective is tosecure a challenging position in a fast-pacedorganization that will enable me to apply myskills and gain practical experience in theindustry. I am eager to contribute myknowledge and collaborate with a dynamicteam to achieve the organization's goals whileenhancing my professional growth.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Front End</span><br/>Designing Web interfaces</li>
+                            <li><span>Python</span><br/>Development of Software</li>
+                            <li><span>SQL</span><br/>Handelling Data Base</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022 - current</span><br/>BCA - Data Analytics at JAIN University</li>
+                            <li><span>2021</span><br/>12th from Bharathi Vidhya Bhavan</li>
+                            <li><span>2019</span><br/>10th from Bharathi Vidhya Bhavan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------Projects----------------------------->
+
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png" draggable="false" loading="lazy">
+                    <div class="layer">
+                        <h3>Web Page</h3>
+                        <p>This is a Website Build for AK Lead Solution which is a startup</p>
+                        <a href="https://vigneshbalajia.github.io/AKLeadSolutions/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------Contact----------------------------->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:k.b.tharshankumar@gmail.com" class="mail">k.b.tharshankumar@gmail.com </a> </p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/tharshankumar-kb-75310821b"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-reight">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">SUBMIT</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>              
+            </div>
+        </div>
+    </div>
+
+
+    <!-------------------JS--------------------->
+
+    <script async>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+      
+    <script defer>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzrh9V2SuTxLRd6jrm2PGOa7PPr7wXq5SyZebHOnN1NTt8WMDqUWfclxnAO3JnURd_X/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message Sent Successfully"
+                setTimeout(function(){
+                    msg.innerHTML =""
+        },5000)
+        form.reset()
+    })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+
+    <script defer>
+        let mybutton = document.getElementById("pageup");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 1500 || document.documentElement.scrollTop > 1500) {
+                mybutton.style.display = "block";
+            } 
+            else {
+                mybutton.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+</html>
