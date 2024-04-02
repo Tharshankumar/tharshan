@@ -15,7 +15,12 @@ body{
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y:300px ;
-    
+}
+.desktop{
+    display: visible;
+}
+.mobile{
+    display: none;
 }
 #header{
     width: 100%;
@@ -51,7 +56,7 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    color: #ff004f;
+    color: #0b5cff;
 }
 
 #header h1{
@@ -63,9 +68,30 @@ nav ul li a:hover{
 }
 
 .name{
-    color:#ff004f
+    color:#0b5cff
 }
 
+.typewriter{
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em; 
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
 
 /* ---------------about-----------------------*/
 
@@ -113,7 +139,7 @@ nav ul li a:hover{
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #0b5cff;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -130,7 +156,7 @@ nav ul li a:hover{
 }
 
 .tab-contents ul li span{
-    color: #b54769;
+    color: #0b5cff;
     font-size: 18px;
 }
 
@@ -163,7 +189,6 @@ nav ul li a:hover{
 .work img{
     width:100%;
     border-radius: 10px;
-    border: 2px solid #fff;
     display: block;
     transition:tranform(1s);
 }
@@ -171,7 +196,7 @@ nav ul li a:hover{
 .layer{
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    background: linear-gradient(rgba(0,0,0,0.6),#0b5cff);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -192,7 +217,7 @@ nav ul li a:hover{
 }
 .layer a{
     margin-top: 20px;
-    color: #ff004f;
+    color: #0b5cff;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
@@ -201,10 +226,6 @@ nav ul li a:hover{
     height: 60px;
     border-radius: 50%;
     text-align: center;
-}
-
-.work:hover img{
-    transform: scale(1.2);
 }
 
 .work:hover .layer{
@@ -229,7 +250,7 @@ nav ul li a:hover{
 }
 
 .contact-left p i{
-    color:#ff004f ;
+    color:#0b5cff ;
     margin-right: 15px;
     font-size: 25px;
 }
@@ -248,7 +269,7 @@ nav ul li a:hover{
 }
 
 .social-icons a :hover{
-    color: #ff004f;
+    color: #0b5cff;
     transform:translateY(-5px);
 }
 
@@ -267,8 +288,8 @@ nav ul li a:hover{
 }
 
 .btn:hover{
-    background: #d60044;
-    border-color: #d60044;
+    background: #0b5cff;
+    border-color: #0b5cff;
 }
 
 .contact-reight form{
@@ -279,12 +300,12 @@ form input,form textarea{
     width: 100%;
     border: 0;
     outline: none;
-    background: #262626;
+    background: #26262600;
+    border-bottom: 2px solid #fff;
     padding: 15px;
     margin: 15px 0;
     color: #fff;
     font-size: 18px;
-    border-radius: 6px;
 }
 
 .pageup{
@@ -318,6 +339,12 @@ nav .fa-solid{
     body{
         background-size: 130%;
     }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display:block;
+    }
     nav ul li a{
         transition: none;
     }
@@ -337,7 +364,7 @@ nav .fa-solid{
         margin-left: 100%;
     }
     nav ul{
-        background: #ff004f;
+        background: #0b5cff;
         position: fixed;
         top: 0;
         right: -200px;
